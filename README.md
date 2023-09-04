@@ -1,1 +1,1 @@
-# hamen-search-extension
+# Hamen Search Extension
