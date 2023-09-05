@@ -1,3 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --hamen-background-color-primary: hsl(0, 0%, 98%);
+    --hamen-background-color-default: hsl(0, 0%, 96%);
+    --hamen-background-color-secondary: hsl(0, 0%, 94%);
+
+    --hamen-font-size-normal: calc(14px * var(--hamen-font-size-multiplier));
+    --hamen-font-size-sub: calc(13px * var(--hamen-font-size-multiplier));
+
+    --hamen-text-color-light: hsl(0, 0%, 60%);
+    --hamen-text-color-normal: hsl(0, 0%, 40%);
+    --hamen-text-color-bold: hsl(0, 0%, 30%);
+
+    --hamen-border-color-primary: rgba(0, 0, 0, 0.12);
+    --hamen-border-color-normal: rgba(0, 0, 0, 0.06);
+    --hamen-border-color-secondary: rgba(0, 0, 0, 0.03);
+    --selection-color: hsl(218, 100%, 87%);
+}
+
+:root[is-dark-mode=true] {
+    --hamen-background-color-primary: hsl(0, 0%, 10%);
+    --hamen-background-color-default: hsl(0, 0%, 13%);
+    --hamen-background-color-secondary: hsl(0, 0%, 15%);
+
+    --hamen-font-size-normal: calc(14px * var(--hamen-font-size-multiplier));
+    --hamen-font-size-sub: calc(13px * var(--hamen-font-size-multiplier));
+
+    --hamen-text-color-light: hsl(0, 0%, 60%);
+    --hamen-text-color-normal: hsl(0, 0%, 70%);
+    --hamen-text-color-bold: hsl(0, 0%, 85%);
+
+    --hamen-border-color-primary: rgba(255, 255, 255, 0.12);
+    --hamen-border-color-normal: rgba(255, 255, 255, 0.05);
+    --selection-color: hsl(0, 0%, 20%);
+    --hamen-border-color-secondary: rgba(255, 255, 255, 0.03);
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+:root,
+:root[is-dark-mode=true] {
+    --hamen-font-size-multiplier: 1px;
+}
+
+::selection {
+    background-color: var(--selection-color);
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    width: 100%;
+    height: 100%;
+    color: var(--hamen-text-color-normal);
+    background-color: var(--hamen-background-color-default);
+}
+
+span,a,p,input,select,option,textarea,label {
+    font-size: var(--hamen-font-size-normal);
+    font-family: 'Raleway', sans-serif;
+}
+
+input,select,option,textarea {
+    background-color: var(--hamen-background-color-secondary);
+    font-size: var(--hamen-font-size-sub);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--hamen-text-color-bold);
+    font-family: 'MuseoModerno', cursive;
+}
+
+a {
+    font-weight: 600;
+    text-decoration: none;
+    transition: .1s;
+    color: hsl(220, 97%, 62%)
+}
+
+a:hover {
+    color: hsl(220, 97%, 73%)
+}
+
+a:active {
+    color: hsl(220, 97%, 53%)
+}
+
+.hamburger {
+    cursor: pointer;
+}
+
+.hamburger input {
+    display: none;
+}
+
+.hamburger svg {
+    height: 2.5em;
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+    fill: none;
+    stroke: var(--hamen-text-color-bold);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+        stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+    stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked+svg {
+    transform: rotate(-45deg);
+}
+
+.hamburger input:checked+svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+}
+
+body>footer {
+    padding: 12px;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    width: 100%;
+    background: var(--hamen-background-color-secondary);
+    border-top: 1px solid var(--hamen-border-color-normal);
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+body>footer span,
+body>footer a {
+    font-size: var(--hamen-font-size-sub);
+}
+
+body {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+body>main {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    flex-grow: 1;
+}
+
+label {
+    width: 100%;
+    display: flex;
+    gap: 1em;
+    justify-content: space-between;
+    align-items: center;
+}
+
+select {
+    width: 18em;
+    max-width: 18em;
+    min-width: 18em;
+}
+
+select,input {
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid var(--hamen-border-color-normal);
+    color: var(--hamen-text-color-normal);
+    padding: 4px 8px;
+    cursor: pointer;
+    width: 226px;
+    max-width: 226px;
+    min-width: 226px;
+}
+
+input {
+    box-sizing: border-box;
+    margin: 0;
+    font-size: var(--hamen-font-size-normal);
+    cursor: text
+}
+
+input[type=number] {
+    text-align: center;
+}
+
+button,
+input {
+    user-select: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .hamburger>svg {
     position: absolute;
     right: 2.9em;
