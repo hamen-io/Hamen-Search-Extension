@@ -285,12 +285,11 @@ body>main {
     justify-content: center;
     gap: 0;
     align-items: center;
-    padding: 8em;
-    padding-bottom: 14em;
 }
 
 body>main h1 {
-    margin-bottom: 2em;
+    margin-bottom: 1em;
+    font-size: 24px;
 }
 
 body>main svg {
