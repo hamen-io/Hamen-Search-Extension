@@ -5,7 +5,7 @@
     "author": "Hamen.io",
     "description": "Developed by Hamen.io, the Hamen Search Extension is used to quickly search in different source websites such as Wikipedia, Google, YouTube, etc",
     "icons": {
-        "16": "icon.png"
+        "16": "media/icon.ico"
     },
     "permissions": [
         "storage",

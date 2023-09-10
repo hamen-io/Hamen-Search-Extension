@@ -17,7 +17,7 @@ const readAppearance = () => {
     chrome.storage.local.get("hamenSearchExtension").then((hamenSearchExtension) => {
         const settings = hamenSearchExtension.hamenSearchExtension?.settings;
         document.querySelector("#theme-menu").value = settings?.appearance?.isDarkMode === true ? "DARK" : "LIGHT";
-        document.querySelector("#font-size-multiplier").value = settings?.appearance?.fontSizeMultiplier.toString();
+        document.querySelector("#font-size-multiplier").value = settings?.appearance?.fontSizeMultiplier?.toString() || 1;
         document.querySelector("#search-engine").value = settings?.appearance?.searchEngine?.toString()?.toUpperCase() || "DUCKDUCKGO";
 
         updateAppearance();
